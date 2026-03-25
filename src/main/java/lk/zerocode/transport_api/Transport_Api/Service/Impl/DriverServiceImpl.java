@@ -32,5 +32,11 @@ public class DriverServiceImpl implements DriverService {
         return driverRepository.findAllDrivers();
     }
 
+    @Override
+    public Driver getById(Long driverId) {
+
+        return driverRepository.findDriverById(driverId);
+    }
+
 
 }
