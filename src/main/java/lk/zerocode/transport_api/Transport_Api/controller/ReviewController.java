@@ -5,10 +5,7 @@ import lk.zerocode.transport_api.Transport_Api.controller.request.ReviewRequest;
 import lk.zerocode.transport_api.Transport_Api.controller.response.ReviewResponse;
 import lk.zerocode.transport_api.Transport_Api.model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +45,23 @@ public class ReviewController {
 
         return reviewResponseList;
     }
+
+//method 3
+
+
+    @GetMapping("/review/{id}")
+    public ReviewResponse reviewGetId(@PathVariable Long id){
+
+       Review review = reviewService.getReviewById(id);
+        ReviewResponse reviewResponse = new ReviewResponse();
+        reviewResponse.setId(review.getId());
+        reviewResponse.setDriverName(review.getDriverName());
+        reviewResponse.setMessage(review.getMessage());
+        return reviewResponse;
+
+
+    }
+
 
 
 

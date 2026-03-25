@@ -13,6 +13,9 @@ public interface ReviewService {
     List<Review> getAllReview();
 
 
+    Review getReviewById(Long id);
+
+
 
 
 }
