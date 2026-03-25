@@ -62,6 +62,17 @@ public class ReviewController {
 
     }
 
+//method 4
+    @PutMapping("/review/{review-id}")
+    public void reviewUpdate(@PathVariable("review-id") Long id, @RequestBody ReviewRequest reviewRequest){
+
+        reviewService.updateReview(id, reviewRequest);
+
+
+        System.out.println("Review updated");
+
+    }
+
 
 
 

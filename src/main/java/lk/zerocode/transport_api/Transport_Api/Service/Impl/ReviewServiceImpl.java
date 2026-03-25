@@ -45,4 +45,11 @@ public class ReviewServiceImpl implements ReviewService {
 
       return   reviewRepositary.findReviewById( id);
     }
+
+
+    @Override
+    public void updateReview(Long id,ReviewRequest reviewRequest) {
+        reviewRepositary.updateReview(id,reviewRequest);
+
+    }
 }
