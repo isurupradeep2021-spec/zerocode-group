@@ -39,4 +39,9 @@ public class VehicleServiceImpl implements VehicleService {
         return vehicleRepository.findVehicleById(id);
 
     }
+
+    @Override
+    public Vehicle updateById(Long id,VehicleRequest vehicleRequest) {
+        return vehicleRepository.updatevehicle(id,vehicleRequest);
+    }
 }

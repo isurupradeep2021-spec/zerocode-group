@@ -12,4 +12,6 @@ public interface VehicleService {
     List<Vehicle> getAll();
 
     Vehicle getById(Long id);
+
+    Vehicle updateById(Long id,VehicleRequest vehicleRequest);
 }

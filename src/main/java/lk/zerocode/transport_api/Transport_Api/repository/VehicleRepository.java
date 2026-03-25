@@ -1,5 +1,6 @@
 package lk.zerocode.transport_api.Transport_Api.repository;
 
+import lk.zerocode.transport_api.Transport_Api.controller.request.VehicleRequest;
 import lk.zerocode.transport_api.Transport_Api.model.Vehicle;
 import org.springframework.stereotype.Repository;
 
@@ -26,6 +27,21 @@ import java.util.List;
                     return vehicle;
                 }
             }
+            return null;
+        }
+        public Vehicle updatevehicle(Long Id, VehicleRequest request) {
+            for (Vehicle vehicle : vehicleList) {
+
+                if (vehicle.getId().equals(Id)) {
+
+                    vehicle.setVehicleNumber(request.getVehicleNumber());
+                    vehicle.setId(request.getId());
+                    vehicle.setType(request.getType());
+
+                    return vehicle;
+                }
+            }
+
             return null;
         }
 
