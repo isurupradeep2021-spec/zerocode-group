@@ -1,5 +1,6 @@
 package lk.zerocode.transport_api.Transport_Api.repository;
 
+import lk.zerocode.transport_api.Transport_Api.controller.request.ReviewRequest;
 import lk.zerocode.transport_api.Transport_Api.model.Review;
 import org.springframework.stereotype.Repository;
 
@@ -24,6 +25,24 @@ public class ReviewRepositary {
                 return review;
             }
         }
+        return null;
+    }
+
+    public Review updateReview(Long id, ReviewRequest request) {
+        for (Review review : reviewList) {
+
+            if (review.getId().equals(id)) {
+
+                review.setDriverName(request.getDriverName());
+                review.setId(request.getId());
+                review.setMessage(request.getMessage());
+
+
+
+                return review;
+            }
+        }
+
         return null;
     }
 }

@@ -16,6 +16,9 @@ public interface ReviewService {
     Review getReviewById(Long id);
 
 
+    void updateReview(Long id,ReviewRequest reviewRequest);
+
+
 
 
 }
