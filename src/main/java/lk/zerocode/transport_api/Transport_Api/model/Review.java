@@ -1,6 +1,7 @@
-package lk.zerocode.transport_api.Transport_Api.controller.response;
+package lk.zerocode.transport_api.Transport_Api.model;
 
-public class ReviewResponse {
+public class Review {
+
     private Long id;
     private String driverName;
     private String message;
