@@ -59,4 +59,11 @@ public class DriverController {
 
         return  driverResponse;
     }
+
+    @PutMapping("/drivers/{driverId}")
+    public void updateById(@PathVariable("driverId") Long driverId, @RequestBody DriverRequest driverRequest){
+         driverService.updateById(driverId,driverRequest);
+    }
+
+
 }
