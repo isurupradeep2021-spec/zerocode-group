@@ -5,6 +5,7 @@ import lk.zerocode.transport_api.Transport_Api.controller.request.ReviewRequest;
 import lk.zerocode.transport_api.Transport_Api.controller.response.ReviewResponse;
 import lk.zerocode.transport_api.Transport_Api.model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +29,7 @@ public class ReviewController {
     }
 
 //method 2
-
+    @GetMapping("/reviews")
     public  List<ReviewResponse> getAllReview() {
 
         List<Review> reviewList = reviewService.getAllReview();
